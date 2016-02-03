@@ -1,11 +1,5 @@
-﻿// 定義するとAESで暗号化しない
-# define NOT_USING_AES
-
-// 定義するとそのままのファイルパスで保存
-# define NOT_USING_APPDATA
-
-# include <Siv3D.hpp>
-# include "Asc/AscSavedata.hpp"
+﻿# include <Siv3D.hpp>
+# include "asc/AscSavedata.hpp"
 
 void Main()
 {
@@ -31,10 +25,6 @@ void Main()
 
 	// キーの削除
 	savedata.erase(L"hp");
-
-	// パラメータの変更
-	savedata.delimiter = L'$';
-	savedata.aes128Key = AES128Key();
 
 	WaitKey();
 }
